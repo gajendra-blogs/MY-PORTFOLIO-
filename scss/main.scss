@@ -1,0 +1,395 @@
+@import 'config';
+ @import 'utilities';
+ @import 'itemgrid';
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    line-height: 1;
+    background:#ffff;
+}
+
+
+a{
+    text-decoration:none;
+    color:$dark-color;
+}
+
+h1,h3,h4{
+    text-transform:uppercase;
+}
+img{
+    width:100%;
+    line-height: 100vh;
+}
+// logo
+.logo{margin-top:-5px;
+    color:#ffff;
+    text-transform:uppercase;
+    font-size: 3.5rem;
+    text-shadow: rgba(51, 51, 51, 0.438) 1px 0.5px 2px;
+    align-content:center;
+}
+
+// main nav
+#main-nav{
+    display:flex;
+    justify-content:space-between;
+    padding-top: 1rem;
+    
+      ul{list-style: none;
+        display: flex;
+       
+        }
+
+     li{
+         padding:1rem 1.5rem;
+       }
+
+     a{
+         text-decoration:none;
+         color:#ffff;
+         text-transform: uppercase;
+         border-bottom: 3px transparent solid;
+         padding-bottom:0.5rem;
+         transition: border-color 0.5s;
+
+         &:hover{
+             border-color:$medium-color;
+            }
+         &.current{
+             border-color:$main-color;
+         }
+     }
+}
+
+
+//header
+#header{
+    &-home{
+        background:$bg-image no-repeat center right/cover;
+        height:100vh;
+        color:#ffff;
+     // header-content
+     .header-content
+     {
+         text-align:center;
+         padding-top:20%;
+
+                 h1{
+                 font-size:3.5rem;
+                 line-height: 1.2;
+                 }
+        }
+      }
+
+    //   header-inner
+      &-inner{
+         background: $bg-image no-repeat 20% 30% / cover;
+         height: 5.5rem;
+         border-bottom: 3px solid $main-color;
+     }
+}
+
+// home section
+#home{
+    &-a{
+        .specials{
+            margin-top:3rem;
+            display:grid;
+            grid-gap:1rem;
+            grid-template-columns: repeat(4, 1fr);
+
+            .fas{
+                color:$main-color;
+                padding-bottom:0.4rem;
+            }
+        }
+    }
+
+// section:b
+    &-b{
+        .stats{
+            display:grid;
+            grid-template-columns:repeat(4, 1fr);
+
+            ul{
+                list-style: none;
+            
+
+            li{ 
+                line-height: 2;
+
+                &.stats-title{font-size:1.5rem;
+                }
+
+                &.stats-number{
+                    font-size:2rem;
+                    font-weight:bold;
+                }
+            }
+           }
+
+           div{
+               padding:3rem 0;
+
+               &:nth-child(odd){
+                   background:rgba(255, 255, 254, 0.589);
+
+               }
+               &:nth-child(even){
+                background:$medium-color;
+                
+            }
+           }
+        }
+    }
+    // section:c
+    &-c{
+        .process{
+            display: grid;
+            grid-template-columns:repeat(4, 1fr);
+            text-align:center;
+
+            &-step{
+                position: absolute;
+                top:0;
+                right: 0;
+                font-size: 28px;
+                background: $main-color;
+                border-radius: 50%;
+                height: 15px;
+                width:15px;
+                line-height:15px;
+                padding:1rem;
+                transition:all 1s;
+            }
+
+           &-icon{
+               border-radius: 50%;
+               background:$dark-color;
+               color: #ffff;
+               padding: 2rem;
+               width: 60px;
+               height: 60px;
+               line-height: 70px;
+               text-align: center;
+               position: relative;
+               transition: all 1s;
+
+               &:hover{
+                   background:$main-color;
+                   width: 70px;
+                   height: 70px;
+                   line-height: 90px;
+
+                   .process-step{
+                       background: $dark-color;
+                   }
+               }
+
+
+           }
+
+        }
+    }
+}
+// about section
+
+#about{
+        
+
+    &-a{
+
+        .about-info{
+            display:grid;
+            grid-template-areas: 
+            'bioimage bio bio'
+            'aw1 aw2 aw3';
+            grid-gap:1.2rem;
+            
+            
+        }
+        // grid area
+        .bio-image{
+            grid-area:bioimage;
+        }
+
+        .bio{
+            grid-area:bio;
+            border-left:3px solid $main-color;
+            padding:0.8rem;
+        }
+        .award-1{
+            grid-area:aw1;
+        }
+        .award-2{
+            grid-area:aw2;
+        } 
+        .award-3{
+            grid-area:aw3;
+        }
+
+        .award-1 .fas,
+        .award-2 .fas,
+        .award-3 .fas{
+            color:$main-color;
+            margin:1rem;
+                     }
+
+    }
+    // about B
+    
+    &-b {
+          .progress{
+              overflow: hidden;
+              height:20px;
+              margin-bottom: 0.6rem;
+              background:$medium-color;
+              border-radius:5px;
+
+              div{
+                  height:100%;
+                  text-align: center;
+                  color: #fff;
+                  background:$main-color;
+                }
+            }
+        }
+        // About:C
+        &-c {
+            .about-logos{
+                display: grid;
+                grid-template-columns:repeat(3,1fr);
+                grid-gap:2rem;
+
+                img{
+                    width:70%;
+                }
+            }
+        }
+        // about:d
+        &-d{
+            .testimonials{
+                display: grid;
+                grid-template-columns: repeat(3,1fr);
+                grid-gap:0.5rem;
+
+                ul{
+                    list-style:none;
+                    display: flex;
+                    align-items:center;
+                    margin-top: 1rem;
+
+                }
+                p{
+                    border:1px solid $medium-color;
+                    border-radius:5px;
+                    padding:0.5rem;
+                }
+                img{
+                    width:50px;
+                    height:50px;
+                    margin-right:0.5 rem;
+                    border-radius:50%;
+                
+                }
+            }
+        }
+
+}
+// contact page
+#contact{
+    &-a{
+        .text-fields{
+            display: grid;
+            grid-template-areas: 
+            'name email'
+            'subject phone'
+            'message message';
+            grid-gap: 1.2rem;
+            margin-bottom:1.2rem;
+        
+            .name-input{
+                grid-area: name;
+            }
+            .subject-input{
+                grid-area: subject;
+            }
+            .email-input{
+                grid-area: email;
+            }
+            .phone-input{
+                grid-area: phone;
+            }
+            .message-input{
+                grid-area: message;
+                height:100px;
+                border-radius: 5px;
+            }
+
+            .text-input{
+                padding: 0.5rem 1rem;
+                border-radius: 5px;
+            }
+        }
+        button{
+            width: 50%;
+            border-radius: 5px;
+        }
+    }
+    &-b{
+        .contact-info{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            text-align: center;
+            line-height: 3rem;
+        }
+       
+    }
+    &-c{
+        h1{
+            text-align: center;
+            font-size: 2.5rem;
+            text-shadow: rgba(112, 110, 110, 0.842) 0.5px 0.5px 2px;
+        }
+    }
+}
+
+// footer
+#main-footer{
+
+    background: $dark-color;
+    color: #ffff;
+    height: 5rem;
+
+    .footer-content{
+        display: flex;
+        justify-content: space-between;
+        height: 5rem;
+        align-items: center;
+
+
+        .social .fab{
+            margin-right: 1rem;
+            border: 2px #fff solid;
+            text-align:center;
+            height: 20px;
+            width:20px;
+            line-height:20px;
+            border-radius:50%;
+            padding: 0.5rem;
+
+            &:hover{
+                background: $main-color;
+            }
+        }
+   }        
+        
+}
+
+// import media queries
+@import 'media';
