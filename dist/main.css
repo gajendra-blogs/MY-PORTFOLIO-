@@ -212,7 +212,7 @@ img {
       border-color: #aa9104; }
 
 #header-home {
-  background: url("/image/OIP.jpg") no-repeat center right/cover;
+  background: url("/images/OIP.jpg") no-repeat center right/cover;
   height: 100vh;
   color: #ffff; }
   #header-home .header-content {
